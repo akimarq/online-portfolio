@@ -33,7 +33,7 @@
 .landing .left {
   /* background-color: darkgray; */
   height: 85%;
-  width: 60%;
+  width: 55%;
 }
 .landing .right {
   /* background-color:lightgray; */
@@ -41,7 +41,7 @@
   justify-content: center;
   align-items: center;
   height: 85%;
-  width: 40%
+  width: 45%
 }
 .landing-image img {
   width: auto;
