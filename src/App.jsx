@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import viteLogo from '/vite.svg'
+import myPortrait from './assets/portrait-up.jpg';
 import './App.css'
 
 function App() {
