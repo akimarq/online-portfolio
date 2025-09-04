@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import myPortrait from './assets/portrait-up.jpg';
+import landing_image from './assets/portrait-up.jpg';
 import './App.css'
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
       </div>
       <div className="right">
         <div className="landing-image">
-          <img src="src/assets/portrait-up.jpg" alt="landing-image"/>
+          <img src={landing_image} alt="landing-image"/>
         </div>
       </div>
     </div>
