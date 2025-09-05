@@ -34,6 +34,30 @@
   /* background-color: darkgray; */
   height: 85%;
   width: 55%;
+  display: flex;
+  justify-content: center;
+}
+.landing .left .landing-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 60%;
+  color: white;
+}
+.landing .left .landing-text h1 {
+  font-size: 3.75rem;
+  font-family: 'Parkinsans', sans-serif;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.landing .left .landing-text p {
+  font-size: 1.2rem;
+  font-family: 'Varela Round', sans-serif;
+  color: #bbbbbb;
+  margin-bottom: 15px;
+  line-height: 1.5;
 }
 .landing .right {
   /* background-color:lightgray; */
