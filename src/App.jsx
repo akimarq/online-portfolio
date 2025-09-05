@@ -1,23 +1,23 @@
 import { useState } from 'react'
 import landing_image from './assets/portrait-up.jpg';
+import logo from './assets/logo.svg?react';
+import background from './assets/background.png';
 import './App.css'
 
 function App() {
   return (
   <div className="body">
     <div className="header">
-      <div className="header-text">
-        <h1>achilles marqueses</h1>
-        <p>Creative Developer</p>
+      <div className="logo-container">
+        <img src={logo} alt="logo" className="logo"/>
       </div>
     </div>
-    
     <div className="landing">
       <div className="left">
         <div className="landing-text">
-          <h2>Hi, I'm Achilles</h2>
-          <p>A creative developer based in the Philippines, specializing in crafting engaging and user-friendly digital experiences. With a passion for both design and technology, I blend creativity with technical expertise to bring ideas to life on the web.</p>
-          <p>Whether you're looking to build a stunning website, an interactive application, or a seamless user interface, I'm here to help you achieve your digital goals. Let's work together to create something amazing!</p>
+          <h1>hi, i'm <span className="landing-text-name">achilles</span></h1>
+          <p>a creative developer and designer based in the Philippines, with a passion for building immersive experiences across web, games, and graphic design. i merge clean code with compelling visuals to craft everything from dynamic websites to interactive digital worlds.</p>
+          <p>whether you're looking for a stunning website, an engaging game prototype, or a unique brand identity, i have the diverse skillset to bring your vision to life. let's collaborate and build something unforgettable.</p>
         </div>
       </div>
       <div className="right">

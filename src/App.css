@@ -5,30 +5,22 @@
   justify-content: center;
   height: 15%;
   text-align: center;
-  background-color: #202020;
+  padding: 1%;
+  /* background-color: #202020; */
 }
-
-.header-text h1 {
-  margin: 3% 0 0 0;
-  font-size: 3.75rem;
-  font-family: 'Parkinsans', sans-serif;
-  font-weight: 500;
-  
-  color: #ffffff;
+.header .logo-container img{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: 100px;
 }
-.header-text p {
-  margin: 0 0 3% 0;
-  font-size: 1.1rem;
-  font-family: 'Varela Round', sans-serif;
-  color: #bbbbbb;
-}
-
 .landing {
   display: flex;
   justify-content: center;
   height: 100vh;
   text-align: center;
-  background-color: #111111;
+  /* background-color: #111111; */
 }
 .landing .left {
   /* background-color: darkgray; */
@@ -52,8 +44,12 @@
   font-weight: 500;
   margin-bottom: 20px;
 }
+.landing .left .landing-text h1 .landing-text-name {
+  color: #f57125;
+  font-weight: 600;
+}
 .landing .left .landing-text p {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-family: 'Varela Round', sans-serif;
   color: #bbbbbb;
   margin-bottom: 15px;
@@ -65,7 +61,7 @@
   justify-content: center;
   align-items: center;
   height: 85%;
-  width: 45%
+  width: 40%
 }
 .landing-image img {
   width: auto;
