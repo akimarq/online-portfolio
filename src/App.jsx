@@ -1,34 +1,92 @@
 import { useState } from 'react'
 import landing_image from './assets/portrait-up.jpg';
-import logo from './assets/logo.svg?react';
+import Logo from './assets/logo.svg?react';
 import background from './assets/background.png';
-import './App.css'
+import TextScramble from './text-scramble';
+import './App.css';
 
 function App() {
+  const landingText = [
+    "digital creator",
+    "web developer",
+    "graphic designer",
+    "game developer",
+  ];
+
   return (
   <div className="body">
-    <div className="header">
-      <div className="logo-container">
-        <img src={logo} alt="logo" className="logo"/>
-      </div>
-    </div>
-    <div className="landing">
-      <div className="left">
-        <div className="landing-text">
-          <h1>hi, i'm <span className="landing-text-name">achilles</span></h1>
-          <p>a creative developer and designer based in the Philippines, with a passion for building immersive experiences across web, games, and graphic design. i merge clean code with compelling visuals to craft everything from dynamic websites to interactive digital worlds.</p>
-          <p>whether you're looking for a stunning website, an engaging game prototype, or a unique brand identity, i have the diverse skillset to bring your vision to life. let's collaborate and build something unforgettable.</p>
+      <div className="header">
+          <div className="buttons-left">
+            <a href="#" className='header-buttons'>home</a>
+            <a href="#" className='header-buttons'>projects</a>
+          </div>
+        <div className="logo-container">
+          <img src={Logo} alt="logo" className="logo"/>
+        </div>
+        <div className="buttons-right">
+            <a href="#" className='header-buttons'>about</a>
+            <a href="#" className='header-buttons'>contact</a>
         </div>
       </div>
-      <div className="right">
-        <div className="landing-image">
-          <img src={landing_image} alt="landing-image"/>
+      <div className="sections landing">
+        <div className="left">
+          <div className="landing-text">
+            <h1>hi, i'm <span className="landing-text-name">achilles</span></h1>
+            <TextScramble phrases={landingText} charSet="matrix4" />
+          </div>
+        </div>
+        <div className="right">
+          <div className="landing-image">
+            <img src={landing_image} alt="landing-image"/>
+          </div>
         </div>
       </div>
-    </div>
+      <div className="sections projects">
+        <div className="projects-header">
+          <h1>projects</h1>
+        </div>
+        <div className="projects-grid">
+          <div className="project-card">
+            <div className="card-visual">
+              <div className="card-placeolder-div">
 
+              </div>
+            </div>
+            <div className="card-info">
+              <h2>PYTHOMANCER</h2>
+              <p>Top-down RPG based on Python Programming</p>
+              <p>GDevelop</p>
+            </div>
+          </div>
+          <div className="project-card">
+            <div className="card-visual">
+              <div className="card-placeolder-div">
 
-  </div>
+              </div>
+            </div>
+            <div className="card-info">
+              <h2>ANTI-KAIJU INSTITUTE</h2>
+              <p>3D Fighing Hack and Slash game based on Kaiju No.8</p>
+              <p>Unity, C#</p>
+            </div>
+          </div>
+          <div className="project-card">
+            <div className="card-visual">
+              <div className="card-placeolder-div">
+
+              </div>
+            </div>
+            <div className="card-info">
+              <h2>//.LAST STAND</h2>
+              <p>Cyberpunk-themed 2D Platformer Shooter</p>
+              <p>GDevelop</p>
+            </div>
+          </div>
+        </div>
+      
+
+      </div>
+</div>
   )
 }
 
