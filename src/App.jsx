@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import landing_image from './assets/portrait-up.jpg';
+import landing_image from './assets/pfp2.png';
 import Logo from './assets/logo.svg?react';
 import background from './assets/background.png';
 import TextScramble from './text-scramble';
