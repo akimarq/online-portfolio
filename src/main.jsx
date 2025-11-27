@@ -12,7 +12,7 @@ createRoot(document.getElementById('root')).render(
     <App />
     <Header />
     <Landing />
-    {/* <Projects />
-    <About />  */}
+    <Projects />
+    {/* <About />  */}
   </StrictMode>,
 )
