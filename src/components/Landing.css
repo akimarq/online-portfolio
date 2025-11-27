@@ -1,0 +1,105 @@
+
+
+/* landing page */
+
+.landing {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  /* background-color: #111111; */
+}
+.landing .left .right{
+  height: 100%;
+}
+.landing .left {
+  /* background-color: darkgray; */
+  width: 55%;
+  padding-top: 5%;
+  display: flex;
+  justify-content: center;
+}
+.landing .left .landing-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 60%;
+  color: white;
+}
+.landing .left .landing-text h1 {
+  font-size: 5.4rem;
+  font-family: 'Parkinsans', sans-serif;
+  font-weight: 500;
+  margin: 0px;
+}
+.landing .left .landing-text h1 .landing-text-name {
+  color: #f57125;
+  font-weight: 600;
+}
+.text-container {
+  height: 50px;
+  font-family: 'varela round', sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  color: #bbbbbb;
+  min-height: 2.5rem; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
+
+.scrambling {
+  font-weight: 600;
+}
+
+.landing .right {
+  /* background-color:lightgray; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  padding-top: 5%;
+}
+.landing-image img {
+  width: auto;
+  border-radius: 100%;
+  object-fit: cover;
+  object-position: center center;
+  width: 600px;
+  height: 600px;
+  box-shadow: 3px 13px 16px 1px rgba(0,0,0,0.59);
+}
+
+@media (max-width: 768px) {
+  .landing {
+    flex-direction: column-reverse;
+    height: 100vh;
+    justify-content: center;
+  }
+  .landing .left, .landing .right {
+    width: 100%;
+  }
+
+  /* left */
+  .landing .left {
+  }
+  .landing .left .landing-text {
+    width: 80%;
+  }
+  .landing .left .landing-text h1{
+    font-size: 3rem;
+  }
+    .landing .left .landing-text .text-container{
+    font-size: 1.5rem;
+  }
+
+  /* right */
+.landing .right { 
+  }
+  .landing .right .landing-image img { 
+    width: auto;
+    height: 20rem;
+  }
+}
