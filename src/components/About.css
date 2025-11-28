@@ -56,10 +56,9 @@
 }
 
 .about .left .about-slideshow { 
-    height: 30rem;
-    width: 30rem;
+    height: 35rem;
+    width: 35rem;
     background-color: darkgray;
-    margin-top: 2%;
     border-radius: 10px;
 }
 
@@ -70,10 +69,15 @@
     font-family: 'Varela Round', sans-serif;
     font-size: 1.8rem;
 }
+
 .about .about-content {
     display: flex;
     flex-direction: column;
     text-align: left;
+}
+.about .about-content .about-content-top {
+    width: 85%;
+    font-size: 1,5rem;
 }
 .about .about-content .about-content-bottom {
     display: flex;
@@ -116,7 +120,12 @@
         width: 100%;
     }
     .about .about-content .about-content-top {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         font-size: 1.2rem;
+        width: 100%;
     }
     .about .about-content .about-content-bottom {
         font-size: 1rem;
