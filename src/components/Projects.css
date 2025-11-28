@@ -40,7 +40,7 @@
   box-shadow: 3px 13px 16px 1px rgba(0,0,0,0.59);
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
-  height: 60%;
+  height: 65%;
   width: 30%;
   text-align: left;
 }

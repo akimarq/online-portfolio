@@ -13,6 +13,6 @@ createRoot(document.getElementById('root')).render(
     <Header />
     <Landing />
     <Projects />
-    {/* <About />  */}
+    <About /> 
   </StrictMode>,
 )
