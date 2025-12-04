@@ -1,0 +1,151 @@
+.contact {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background:  rgba(0, 0, 0, 0.25) 10%;
+    width: 100%;
+    height: 93vh;
+}
+
+.contact .contact-header h1{
+    margin: 0;
+    font-size: 4.5rem;
+    font-family: 'Parkinsans', sans-serif;
+    color: white;
+    font-weight:500;
+    width: 100%;
+}
+.contact .contact-header h1 .alt-text {
+    color: #f57125;
+    font-weight:600;
+}
+.contact .contact-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    background-color: transparent;
+}
+
+.contact .contact-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 45%;
+    margin-top: 2rem;
+    /* font */
+    text-align: left;
+    font-size: 1.5rem;
+    font-family: 'Varela Round', sans-serif;
+    color: #bbbbbb;
+}
+.contact .contact-form label{
+    align-self: flex-start;
+    margin-left: 2.5%;
+}
+.contact .contact-form input, .contact .contact-form textarea{
+    width: 95%;
+    padding: 1rem;
+    margin: 1rem 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.25rem;
+    font-family: 'Varela Round', sans-serif;
+}
+.contact .contact-form textarea{
+    height: 10rem;
+    resize: none;
+}
+.contact .contact-form button{
+    display: block;
+    width: 50%;
+    padding: 1rem;
+    margin: 1rem auto 0 auto;
+    border: none;
+    border-radius: 5px;
+    background-color: #4b4b4b;
+    color: white;
+    font-size: 1.5rem;
+    font-family: 'Varela Round', sans-serif;
+    cursor: pointer;
+}
+.contact .contact-form button:hover {
+    transition: ease-in-out 0.15s;
+    transform: scale(1.1);
+    background-color: #f57125;
+    font-size: 1.6rem;
+}
+.contact .contact-form .contact-socials{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 2.5rem;
+}
+.contact .contact-form .contact-socials a{
+    margin: 0 1rem;
+    color: #bbbbbb;
+    text-decoration: none;
+}
+.contact .icon-label {
+    display:inline;
+    height: 1.5rem;
+    width: 1.5rem;
+    margin: 0 .5rem;
+}
+.contact .text-label {
+    display:inline;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1.5rem;
+    margin: 0 .5rem;
+}
+.contact .contact-form .contact-socials a:hover{
+    color: #f57125;
+}
+
+@media (max-width: 768px) {
+    .contact {
+        height: auto;
+    }
+    .contact .contact-header h1{
+        font-size: 2.5rem;
+        text-align: center;
+        margin-top: 2rem;
+    }
+    .contact .contact-form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        font-size: 1rem;
+    }
+    .contact .contact-form .contact-socials{
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+    .contact .contact-form input, .contact .contact-form textarea   {
+        width: 95%;
+        margin: 0.5rem 0;
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+    .contact .contact-form button{
+        width: 60%;
+        background-color: #f57125;;
+    }
+    .contact .text-label {
+        display: none;
+    }
+    .contact .icon-label {
+        display: inline;
+        height: 2rem;
+        width: 2rem;
+        color: #bbbbbb;
+    }
+
+
+}

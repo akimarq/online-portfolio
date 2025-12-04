@@ -43,8 +43,8 @@
 }
 
 .about .about-header h1{
-    margin: 0;
-    font-size: 5rem;
+    margin: 00 0 0;
+    font-size: 4.5rem;
     font-family: 'Parkinsans', sans-serif;
     color: white;
     font-weight:500;
@@ -56,8 +56,8 @@
 }
 
 .about .left .about-slideshow { 
-    height: 35rem;
-    width: 35rem;
+    height: 30rem;
+    width: 30rem;
     background-color: darkgray;
     border-radius: 10px;
 }
