@@ -50,7 +50,7 @@ function Form() {
                     <InstagramIcon className="icon-label"/>
                     <span className="text-label">Instagram</span>
                 </a>
-                <a href="https://www.linkedin.com/in/achillesmarqueses/" className='social-buttons'>
+                <a href="https://www.linkedin.com/in/achilles-marqueses/" className='social-buttons'>
                     <LinkedIcon className="icon-label"/>
                     <span className="text-label">LinkedIn</span>
                 </a>
