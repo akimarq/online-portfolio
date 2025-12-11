@@ -64,7 +64,7 @@
 
 /* right */
 .about .right {
-    width: 50%;
+    width: 90%;
     color: white;
     font-family: 'Varela Round', sans-serif;
     font-size: 1.8rem;
@@ -77,15 +77,13 @@
 }
 .about .about-content .about-content-top {
     width: 85%;
-    font-size: 1,5rem;
+    font-size: 1.75rem;
 }
 .about .about-content .about-content-bottom {
     display: flex;
     justify-content: space-evenly;
     margin-top: 2%;
-}
-.about .about-content .about-content-bottom-left .about-content-bottom-right {
-    width: 50%;
+    font-size: 1.5rem;
 }
 .about .about-content .about-content-bottom-half{
     width: 50%;
@@ -93,6 +91,7 @@
 
 .about .right ul {
     list-style: none;
+    padding: 0;
 }
 
 @media screen and (max-width: 768px) {
@@ -141,15 +140,8 @@
         align-items: center;
         text-align: left;
     }
-    .about .about-content .about-content-bottom-half ul{
-        width: 75%;
-        text-align: left;
-        padding: 0;
-    }
     .about .about-content .about-content-bottom-left, .about .about-content .about-content-bottom-right {
         width: 100%;
-    }
-    .about-content-bottom{
     }
     .about .left .about-slideshow {
         height: 19rem;

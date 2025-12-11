@@ -1,14 +1,8 @@
 function List(list) {
   return (
-    <div className="about-content-bottom-half">
+    <div className="about-content-desc">
         <p>{list.title}</p>
-        <ul>
-            <li>• {list.item1}</li>
-            <li>• {list.item2}</li>
-            <li>• {list.item3}</li>
-            <li>• {list.item4}</li>
-            <li>• {list.item5}</li>
-        </ul>
+        <p>- {list.item}</p>
     </div>
   );
 }
