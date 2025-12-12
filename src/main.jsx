@@ -6,7 +6,7 @@ import './index.css';
 import App from './App.jsx';
 import Projects from './components/Projects.jsx';
 import About from './components/About.jsx';
-import Header from './components/header';
+import Header from './components/Header';
 import Landing from './components/Landing';
 import Contact from './components/Contact';
 

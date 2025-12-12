@@ -1,5 +1,5 @@
 import '../App.css';
-import './projects.css';
+import './Projects.css';
 import Card from './Card';
 import Video1 from '../assets/video1.mp4';
 import Video2 from '../assets/video2.mp4';
