@@ -5,5 +5,5 @@ import svgr from 'vite-plugin-svgr';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), svgr()],
-  base: 'https://akimarq.github.io/online-portfolio/',
+  base: '/online-portfolio/',
 })
