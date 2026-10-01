@@ -30,21 +30,23 @@ function About({sectionRef}) {
                     <div className="about-content">
                         <div className="about-content-top">
                             <p>
-                            I am <span className="alt-text">Achilles Rupert Marqueses</span>, a passionate game developer and programmer with a foundation in computer information. 
+                            I am <span className="alt-text">Achilles Marqueses</span>, an Information Technology graduate with practical experience in full stack development. 
                             </p>
                             <List 
-                            title="Game Development"
-                            item="Experienced with GDevelop, Unity (C#), JavaScript for gameplay logic, 
-                            and Blender for modeling/animation. Skilled in gameplay programming, prototyping, system/combat design, asset creation, 
-                            UI implementation, and debugging game mechanics."
+                            title="Full Stack Development"
+                            item="Experience with JavaScript, ReactJS, Typescript, NextJS, NodeJS, ExpressJS, MySQL, and Git. Skilled in front-end development, object-oriented programming, debugging, rapid iteration, and clear technical documentation."
                             />
                         <List 
                             title="Information Technology"
                             item="Experience with JavaScript, React.js, Java, C#, and Git-based workflows. Skilled in front-end development, object-oriented programming, debugging, rapid iteration, and clear technical documentation."
                             />
                         <List 
-                        title="Personal Interests"
-                        item="Currently exploring Linux and Homelabbing. Enjoys creating Digital Art, 3D Modeling, and Animation using software like Krita and Blender. Avid fan of anime, gaming, and technology. Enthusiastic about various hobbies such as Gunpla, music, and conceptual design for games and stories."
+                        title="Game Development"
+                        item="Experience with GDevelop, Unity (C#), JavaScript for gameplay logic, and Blender for modeling/animation. Skilled in gameplay programming, prototyping, system/combat design, asset creation, UI implementation, and debugging game mechanics."
+                        />
+                        <List 
+                        title="Other Areas of Interest"
+                        item="Experience with Homelabbing, Linux, and hardware/software troubleshooting. Digital Artist experienced with Krita, Blender and Adobe Suite. "
                         />
                         </div>
                     </div>
