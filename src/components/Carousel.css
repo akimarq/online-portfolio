@@ -1,71 +1,93 @@
-.acs {
+.carousel {
   position: relative;
   width: 100%;
-  max-width: 520px;
-  margin: 0 auto;
+  height: 100%;
   overflow: hidden;
-  border-radius: 10px;
 }
 
-.acs-track {
+.carousel-track {
   display: flex;
-  transition: transform 360ms ease;
   width: 100%;
-  height: 30rem;
+  height: 100%;
+  transition: transform 360ms ease;
 }
 
-.acs-slide {
+.carousel-slide {
+  flex: 0 0 100%;
   min-width: 100%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-shrink:0;
+  height: 100%;
 }
 
-.acs-slide img {
-  width:100%;
-  height:100%;
-  object-fit:scale-down;
-  user-select:none;
-  pointer-events:none;
-}
-
-/* buttons */
-.acs-btn {
+.carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   border: none;
-  background: rgba(255,255,255,0.9);
+  background: rgba(255, 255, 255, 0.9);
   padding: 6px 10px;
   border-radius: 999px;
   font-size: 20px;
   cursor: pointer;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  z-index: 2;
 }
 
-.acs-prev { left: 10px; }
-.acs-next { right: 10px; }
+.carousel-prev { left: 10px; }
+.carousel-next { right: 10px; }
 
-/* dots */
-.acs-dots {
+.carousel-dots {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   bottom: 10px;
-  display:flex;
-  gap:8px;
+  display: flex;
+  gap: 8px;
+  z-index: 2;
 }
 
-.acs-dot {
-  width:10px;height:10px;border-radius:50%;border:none;background:rgba(255,255,255,0.8);cursor:pointer;
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
 }
-.acs-dot.active { background: rgba(0,0,0,0.85); }
 
-/* single image fallback */
-.acs-single img { width:100%; height:auto; border-radius:10px; }
+.carousel-dot.active {
+  background: rgba(0, 0, 0, 0.85);
+}
 
-/* responsive */
-@media (max-width:640px) {
-  .acs-track { height: 19rem; }
+/* About: old photo widget size */
+.carousel--gallery {
+  max-width: 520px;
+  height: 30rem;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.carousel--gallery .carousel-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel--gallery .carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Projects: fill the section slot */
+.carousel--full {
+  flex: 1;
+  min-height: 100%;
+  touch-action: pan-x;
+}
+
+@media (max-width: 640px) {
+  .carousel--gallery {
+    height: 19rem;
+  }
 }

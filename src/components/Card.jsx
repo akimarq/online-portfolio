@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import VideoLightbox from './Video.jsx';
 import './Video.css'; // your css
 
-function Card({ name, desc, env, videoSrc, poster }) {
+function Card({ title, description, env, role, media, poster }) {
   const openerRef = useRef(null);
   const [showInline, setShowInline] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -34,7 +34,7 @@ function Card({ name, desc, env, videoSrc, poster }) {
           {showInline ? (
             <video
               className="card-video-inline"
-              src={videoSrc}
+              src={media}
               poster={poster}
               controls
               autoPlay
@@ -45,25 +45,26 @@ function Card({ name, desc, env, videoSrc, poster }) {
               className="card-video-button"
               onClick={onPlay}
             >
-              <img src={poster} alt={`${name} preview`} className="card-poster" />
+              <img src={poster} alt={`${title} preview`} className="card-poster" />
               <span className="card-play-icon">▶</span>
             </button>
           )}
         </div>
 
         <div className="card-info">
-          <h2>{name}</h2>
-          <p>{desc}</p>
+          <h2>{title}</h2>
+          <p>{description}</p>
           <p>{env}</p>
+          <p>{role}</p>
         </div>
       </div>
 
       {/* Desktop modal */}
       {showModal && (
         <VideoLightbox
-          src={videoSrc}
+          src={media}
           poster={poster}
-          title={name}
+          title={title}
           onClose={onCloseModal}
           openerRef={openerRef}
         />

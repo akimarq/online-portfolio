@@ -1,49 +1,68 @@
-// src/components/AboutCarouselSimple.jsx
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, Children } from 'react';
 import './Carousel.css';
 
-export default function AboutCarouselSimple({
-  images = [],
-  altTexts = [],
-  autoplay = true,
-  interval = 3500,   // autoplay every 3.5 seconds
+export default function Carousel({
+  children,
+  index: indexProp,
+  onIndexChange,
+  autoplay = false,
+  interval = 3500,
+  ariaLabel = 'Carousel',
+  className = '',
+  showArrows = true,
+  showDots = true,
 }) {
-  const [index, setIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
+  const slides = Children.toArray(children).filter(Boolean);
+  const count = slides.length;
+
+  const isControlled = indexProp !== undefined;
+  const [internalIndex, setInternalIndex] = useState(0);
+  const index = isControlled ? indexProp : internalIndex;
+
   const startX = useRef(null);
+  const [paused, setPaused] = useState(false);
 
-  const prev = () => setIndex(i => (i - 1 + images.length) % images.length);
-  const next = () => setIndex(i => (i + 1) % images.length);
-  const goTo = (i) => setIndex(((i % images.length) + images.length) % images.length);
+  const setIndex = (next) => {
+    if (count === 0) return;
+    const resolved = typeof next === 'function' ? next(index) : next;
+    const wrapped = ((resolved % count) + count) % count;
+    if (!isControlled) setInternalIndex(wrapped);
+    onIndexChange?.(wrapped);
+  };
 
-  // autoplay
+  const prev = () => setIndex((i) => i - 1);
+  const next = () => setIndex((i) => i + 1);
+  const goTo = (i) => setIndex(i);
+
   useEffect(() => {
-    if (!autoplay || paused || images.length <= 1) return;
-    const timer = setInterval(() => next(), interval);
+    if (!autoplay || paused || count <= 1) return;
+    const timer = setInterval(() => {
+      setIndex((i) => i + 1);
+    }, interval);
     return () => clearInterval(timer);
-  }, [autoplay, paused, images.length, interval]);
+  }, [autoplay, paused, count, interval, index]);
 
-  // touch swipe
-  const onTouchStart = (e) => { startX.current = e.touches?.[0]?.clientX ?? null; };
+  const onTouchStart = (e) => {
+    startX.current = e.touches?.[0]?.clientX ?? null;
+  };
   const onTouchEnd = (e) => {
     if (startX.current == null) return;
     const endX = e.changedTouches?.[0]?.clientX ?? null;
     if (endX == null) return;
     const dx = endX - startX.current;
-    const threshold = 30;
-    if (dx > threshold) prev();
-    else if (dx < -threshold) next();
+    if (dx > 30) prev();
+    else if (dx < -30) next();
     startX.current = null;
   };
 
-  if (images.length === 0) return null;
+  if (count === 0) return null;
 
   return (
     <div
-      className="acs"
+      className={`carousel ${className}`.trim()}
       role="region"
       aria-roledescription="carousel"
-      aria-label="About images"
+      aria-label={ariaLabel}
       onTouchStart={onTouchStart}
       onTouchEnd={onTouchEnd}
       onMouseEnter={() => setPaused(true)}
@@ -52,35 +71,44 @@ export default function AboutCarouselSimple({
       onBlur={() => setPaused(false)}
     >
       <div
-        className="acs-track"
+        className="carousel-track"
         style={{ transform: `translateX(-${index * 100}%)` }}
       >
-        {images.map((src, i) => (
+        {slides.map((slide, i) => (
           <div
-            className="acs-slide"
-            key={i}
-            aria-hidden={i === index ? 'false' : 'true'}
-            tabIndex={i === index ? 0 : -1}
+            className="carousel-slide"
+            key={slide.key ?? i}
+            aria-hidden={i !== index}
           >
-            <img src={src} alt={altTexts[i] ?? `image ${i + 1}`} draggable="false" />
+            {slide}
           </div>
         ))}
       </div>
 
-      <button className="acs-btn acs-prev" onClick={prev} aria-label="Previous">‹</button>
-      <button className="acs-btn acs-next" onClick={next} aria-label="Next">›</button>
+      {showArrows && count > 1 && (
+        <>
+          <button className="carousel-btn carousel-prev" onClick={prev} aria-label="Previous">
+            ‹
+          </button>
+          <button className="carousel-btn carousel-next" onClick={next} aria-label="Next">
+            ›
+          </button>
+        </>
+      )}
 
-      <div className="acs-dots">
-        {images.map((_, i) => (
-          <button
-            key={i}
-            className={`acs-dot ${i === index ? 'active' : ''}`}
-            onClick={() => goTo(i)}
-            aria-pressed={i === index}
-            aria-label={`Go to slide ${i + 1}`}
-          />
-        ))}
-      </div>
+      {showDots && count > 1 && (
+        <div className="carousel-dots">
+          {slides.map((slide, i) => (
+            <button
+              key={slide.key ?? i}
+              className={`carousel-dot ${i === index ? 'active' : ''}`}
+              onClick={() => goTo(i)}
+              aria-pressed={i === index}
+              aria-label={`Go to slide ${i + 1}`}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

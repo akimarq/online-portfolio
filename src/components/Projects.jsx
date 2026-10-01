@@ -1,27 +1,55 @@
+import { useState } from 'react';
 import '../App.css';
-import './projects.css';
+import './Projects.css';
 import Card from './Card';
-import Video1 from '../assets/video1.mp4';
-import Video2 from '../assets/video2.mp4';
-import Video3 from '../assets/video3.mp4';
-import Thumb1 from '../assets/thumb1.png';
-import Thumb2 from '../assets/thumb2.png';
-import Thumb3 from '../assets/thumb3.png';
+import Carousel from './Carousel.jsx';
+import { projectSlides } from './projectSlides.js';
 
-function Projects({sectionRef}) {
+function Projects({ sectionRef }) {
+  const slides = projectSlides.filter((slide) => slide.projects.length > 0);
+  const [index, setIndex] = useState(0);
+
   return (
     <section ref={sectionRef} id="projects" tabIndex={-1}>
       <div className="sections projects">
         <div className="projects-header">
           <h1>projects</h1>
         </div>
-        <div className="projects-grid">
-          <Card name="PYTHOMANCER" desc="Top-down RPG based on Python Programming" env="GDevelop, JavaScript | Role: Lead Developer & Designer" videoSrc={Video1} poster={Thumb1} />
-          <Card name="//.LAST STAND" desc="Cyberpunk-themed 2D Platformer Shooter" env="GDevelop | Role: Lead Developer & Designer" videoSrc={Video3} poster={Thumb3} />
-          <Card name="ANTI-KAIJU INSTITUTE" desc="3D Fighing Hack and Slash game based on Kaiju No.8" env="Tech: Unity, C#, Blender | Role: Lead Developer & Designer" videoSrc={Video2} poster={Thumb2} />
+
+        <div className="projects-buttons">
+          {slides.map((slide, i) => (
+            <button
+              key={slide.id}
+              className={`projects-button ${i === index ? 'active' : ''}`}
+              onClick={() => setIndex(i)}
+              aria-pressed={i === index}
+            >
+              <span className="projects-button-text">{slide.title}</span>
+            </button>
+          ))}
+        </div>
+
+        <div className="projects-carousel">
+          <Carousel
+            index={index}
+            onIndexChange={setIndex}
+            ariaLabel="Project categories"
+            className="carousel--full"
+            showArrows={false}
+            showDots={false}
+          >
+            {slides.map((slide) => (
+              <div key={slide.id} className="projects-grid">
+                {slide.projects.map((project) => (
+                  <Card key={project.id} {...project} />
+                ))}
+              </div>
+            ))}
+          </Carousel>
         </div>
       </div>
     </section>
   );
 }
+
 export default Projects;
