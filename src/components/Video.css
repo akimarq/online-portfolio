@@ -60,6 +60,10 @@
   border-radius: inherit;
 }
 
+.card-link {
+  display: block;
+}
+
 
 
 .vlb-backdrop {

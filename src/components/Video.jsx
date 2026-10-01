@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import './Video.css';
 
 export default function Video({ src, poster, title, onClose, openerRef }) {
@@ -31,13 +32,14 @@ export default function Video({ src, poster, title, onClose, openerRef }) {
     if (e.target === modalRef.current) onClose();
   };
 
-  return (
+  return createPortal(
     <div
       className="vlb-backdrop"
       ref={modalRef}
       onMouseDown={backdropClick}
       role="dialog"
       aria-modal="true"
+      aria-label={title}
     >
       <div className="vlb-panel">
         <button
@@ -58,6 +60,7 @@ export default function Video({ src, poster, title, onClose, openerRef }) {
           />
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

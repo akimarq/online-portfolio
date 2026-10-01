@@ -4,6 +4,7 @@ import Video3 from '../assets/video3.mp4';
 import Thumb1 from '../assets/thumb1.png';
 import Thumb2 from '../assets/thumb2.png';
 import Thumb3 from '../assets/thumb3.png';
+import webThumb4 from '../assets/web-thumb1.png';
 
 
 export const projectSlides = [
@@ -50,7 +51,8 @@ export const projectSlides = [
                 env: "NextJS, TypeScript, TailwindCSS, GSAP",
                 role: "",
                 description: "My personal take on my friend, PhoenixQDC's webpage for displaying his music for the guild Quindecim.",
-                media: "phoenix-music-nine.vercel.app/",
+                poster: webThumb4,
+                link: "https://phoenix-music-nine.vercel.app/",
             }
         ]
     }

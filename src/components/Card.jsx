@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import VideoLightbox from './Video.jsx';
 import './Video.css'; // your css
 
-function Card({ title, description, env, role, media, poster }) {
+function Card({ title, description, env, role, media, poster, link }) {
   const openerRef = useRef(null);
   const [showInline, setShowInline] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -27,28 +27,51 @@ function Card({ title, description, env, role, media, poster }) {
     openerRef.current?.focus();
   };
 
+  const renderVisual = () => {
+    if (link) {
+      return (
+        <a
+          className="card-video-button card-link"
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Open ${title} in a new tab`}
+        >
+          {poster && <img src={poster} alt={`${title} preview`} className="card-poster" />}
+          <span className="card-play-icon">↗</span>
+        </a>
+      );
+    }
+
+    if (showInline) {
+      return (
+        <video
+          className="card-video-inline"
+          src={media}
+          poster={poster}
+          controls
+          autoPlay
+        />
+      );
+    }
+
+    return (
+      <button
+        ref={openerRef}
+        className="card-video-button"
+        onClick={onPlay}
+      >
+        <img src={poster} alt={`${title} preview`} className="card-poster" />
+        <span className="card-play-icon">▶</span>
+      </button>
+    );
+  };
+
   return (
     <>
       <div className="project-card">
         <div className="card-visual">
-          {showInline ? (
-            <video
-              className="card-video-inline"
-              src={media}
-              poster={poster}
-              controls
-              autoPlay
-            />
-          ) : (
-            <button
-              ref={openerRef}
-              className="card-video-button"
-              onClick={onPlay}
-            >
-              <img src={poster} alt={`${title} preview`} className="card-poster" />
-              <span className="card-play-icon">▶</span>
-            </button>
-          )}
+          {renderVisual()}
         </div>
 
         <div className="card-info">
