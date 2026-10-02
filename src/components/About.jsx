@@ -50,7 +50,7 @@ function About({sectionRef}) {
                             />
                             <List 
                                 title="Information Technology"
-                                item="Experience with JavaScript, React.js, Java, C#, and Git-based workflows. Skilled in front-end development, object-oriented programming, debugging, rapid iteration, and clear technical documentation."
+                                item="Basic experience with Windows, Linux, and MacOS. Basic experience with hardware/software troubleshooting. Basic experience with networking and security."
                                 />
                             <List 
                             title="Game Development"
